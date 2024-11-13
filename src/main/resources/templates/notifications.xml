@@ -1,0 +1,108 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<definitions xmlns="http://schemas.xmlsoap.org/wsdl/"
+             xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/"
+             xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+             xmlns:tns="http://www.exemple.com/NotificationService"
+             targetNamespace="http://www.exemple.com/NotificationService"
+             name="NotificationServiceSOAP">
+
+    <!-- Définition des types de données -->
+    <types>
+        <xsd:schema targetNamespace="http://www.exemple.com/NotificationService">
+            <xsd:element name="MissionStatusUpdateRequest">
+                <xsd:complexType>
+                    <xsd:sequence>
+                        <xsd:element name="missionId" type="xsd:int"/>
+	                    <xsd:element name="missionStatus" type="xsd:int"/>
+                        <xsd:element name="personInNeedId" type="xsd:int"/>
+                        <xsd:element name="volunteerId" type="xsd:int"/>
+                    </xsd:sequence>
+                </xsd:complexType>
+            </xsd:element>
+            <xsd:element name="MissionStatusUpdateResponse">
+                <xsd:complexType>
+                    <xsd:sequence>
+                        <xsd:element name="message" type="xsd:string"/>
+                    </xsd:sequence>
+                </xsd:complexType>
+            </xsd:element>
+            
+            <xsd:element name="NewMissionAvailableRequest">
+                <xsd:complexType>
+                    <xsd:sequence>
+                        <xsd:element name="missionId" type="xsd:int"/>
+                        <xsd:element name="missionName" type="xsd:String"/>
+                        <xsd:element name="missionDescription" type="xsd:String"/>
+                        <xsd:element name="personInNeedId" type="xsd:int"/>
+                        <xsd:element name="volunteerId" type="xsd:int"/>
+                        <xsd:element name="missionStatus" type="xsd:int"/>
+                    </xsd:sequence>
+                </xsd:complexType>
+            </xsd:element>
+            <xsd:element name="NewMissionAvailableResponse">
+                <xsd:complexType>
+                    <xsd:sequence>
+                        <xsd:element name="message" type="xsd:string"/>
+                    </xsd:sequence>
+                </xsd:complexType>
+            </xsd:element>
+        </xsd:schema>
+    </types>
+
+    <!-- Définition des messages -->
+    <message name="MissionStatusUpdateRequestMessage">
+        <part name="parameters" element="tns:MissionStatusUpdateRequest"/>
+    </message>
+    <message name="MissionStatusUpdateResponseMessage">
+        <part name="result" element="tns:MissionStatusUpdateResponse"/>
+    </message>
+    <message name="NewMissionAvailableRequestMessage">
+        <part name="parameters" element="tns:NewMissionAvailableRequest"/>
+    </message>
+    <message name="NewMissionAvailableResponseMessage">
+        <part name="result" element="tns:NewMissionAvailableResponse"/>
+    </message>
+
+    <!-- Définition de l'opération -->
+    <portType name="NotificationServicePortType">
+        <operation name="MissionStatusUpdateNotification">
+            <input message="tns:MissionStatusUpdateRequestMessage"/>
+            <output message="tns:MissionStatusUpdateResponseMessage"/>
+        </operation>
+        <operation name="NewMissionAvailableNotification">
+            <input message="tns:NewMissionAvailableRequestMessage"/>
+            <output message="tns:NewMissionAvailableResponseMessage"/>
+        </operation>
+    </portType>
+
+    <!-- Définition du binding SOAP -->
+    <binding name="NotificationServiceBinding" type="tns:NotificationServicePortType">
+        <soap:binding style="document" transport="http://schemas.xmlsoap.org/soap/http"/>
+        <operation name="MissionStatusUpdateNotification">
+            <soap:operation soapAction="http://www.exemple.com/NotificationService/MissionStatusUpdateNotification"/>
+            <input>
+                <soap:body use="literal"/>
+            </input>
+            <output>
+                <soap:body use="literal"/>
+            </output>
+        </operation>
+        <operation name="NewMissionAvailableNotification">
+            <soap:operation soapAction="http://www.exemple.com/NotificationService/NewMissionAvailableNotification"/>
+            <input>
+                <soap:body use="literal"/>
+            </input>
+            <output>
+                <soap:body use="literal"/>
+            </output>
+        </operation>
+    </binding>
+
+    <!-- Point d'accès du service -->
+    <service name="NotificationService">
+        <port name="NotificationServicePort" binding="tns:NotificationServiceBinding">
+            <soap:address location="http://www.exemple.com/NotificationService"/>
+        </port>
+    </service>
+</definitions>
+
