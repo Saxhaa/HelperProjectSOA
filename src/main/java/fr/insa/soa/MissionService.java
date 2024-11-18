@@ -112,5 +112,46 @@ public class MissionService {
         return missionReviews;
     }
     
+    @WebMethod
+    public String assignerVolontaire(@WebParam(name = "idVolunteer") int idVolunteer,
+                                     @WebParam(name = "idMission") int idMission) {
+        // Recherche de la mission dans la liste
+        for (Mission mission : missions) {
+            if (mission.getMissionId() == idMission) {
+                // Vérification si la mission n'est pas déjà assignée
+                if (mission.getHelperId() != 0) {
+                    return "La mission est déjà assignée à un volontaire.";
+                }
+                
+                // Assigner le volontaire à la mission
+                mission.setHelperId(idVolunteer);
+                mission.setStatut(1); // 1 pourrait signifier "En cours"
+                return "Volontaire assigné avec succès à la mission.";
+            }
+        }
+        return "Mission introuvable.";
+    }
+    
+    @WebMethod
+    public String assignerDemandeur(@WebParam(name = "idDemandeur") int idDemandeur,
+                                    @WebParam(name = "idProposition") int idProposition) {
+        // Recherche de la proposition dans la liste
+        for (Mission mission : missions) {
+            if (mission.getMissionId() == idProposition) {
+                // Vérification si la proposition est déjà assignée à un demandeur
+                if (mission.getPersonInNeedId() != 0) {
+                    return "La proposition est déjà associée à un demandeur.";
+                }
+                
+                // Assigner le demandeur à la proposition
+                mission.setPersonInNeedId(idDemandeur);
+                mission.setStatut(2); 
+                return "Demandeur assigné avec succès à la proposition.";
+            }
+        }
+        return "Proposition introuvable.";
+    }
+
+
 
 }

@@ -2,7 +2,7 @@ package fr.insa.soa;
 
 import javax.xml.ws.Endpoint;
 
-public class MissionApplication {
+public class Application {
 	
 	  public static String host = "localhost";
 	    public static short port = 8089;
@@ -13,9 +13,10 @@ public class MissionApplication {
 	    }
 
 	    public static void main(String[] args) {
-	        new MissionApplication().demarrerService();
+	        new Application().demarrerService();
 	        System.out.println("Service démarré");
 	        
 	    }
 
 }
+                                                                                                                         
