@@ -9,6 +9,8 @@ public class MissionDAO {
     // Ajouter une mission
     public Mission createMission(Mission mission) throws SQLException {
         String sql = "INSERT INTO missions (name, description, person_in_need_id, statut) VALUES (?, ?, ?, ?)";
+        
+        // Utiliser la connexion persistante
         try (Connection connection = DatabaseConnection.getConnection();
              PreparedStatement statement = connection.prepareStatement(sql, Statement.RETURN_GENERATED_KEYS)) {
 
@@ -32,6 +34,8 @@ public class MissionDAO {
     public List<Mission> getAllMissions() throws SQLException {
         List<Mission> missions = new ArrayList<>();
         String sql = "SELECT * FROM missions";
+        
+        // Utiliser la connexion persistante
         try (Connection connection = DatabaseConnection.getConnection();
              PreparedStatement statement = connection.prepareStatement(sql);
              ResultSet resultSet = statement.executeQuery()) {
@@ -51,14 +55,16 @@ public class MissionDAO {
     }
 
     // Accepter ou refuser une mission
-    public boolean updateMissionStatus(int missionId, int statut, String description) throws SQLException {
-        String sql = "UPDATE missions SET statut = ?, description = ? WHERE mission_id = ?";
+    public boolean updateMissionStatus(int missionId, int statut) throws SQLException {
+        String sql = "UPDATE missions SET statut = ? WHERE mission_id = ?";
+        
+        // Utiliser la connexion persistante
         try (Connection connection = DatabaseConnection.getConnection();
              PreparedStatement statement = connection.prepareStatement(sql)) {
 
             statement.setInt(1, statut);
-            statement.setString(2, description);
-            statement.setInt(3, missionId);
+          
+            statement.setInt(2, missionId);
 
             int rows = statement.executeUpdate();
             return rows > 0;
@@ -68,6 +74,8 @@ public class MissionDAO {
     // Supprimer une mission
     public boolean deleteMission(int missionId) throws SQLException {
         String sql = "DELETE FROM missions WHERE mission_id = ?";
+        
+        // Utiliser la connexion persistante
         try (Connection connection = DatabaseConnection.getConnection();
              PreparedStatement statement = connection.prepareStatement(sql)) {
 

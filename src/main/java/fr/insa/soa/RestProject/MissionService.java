@@ -56,7 +56,7 @@ public class MissionService {
             int statut = accepte ? 2 : 3; // 2 : Acceptée, 3 : Refusée
             String description = accepte ? null : motif;
 
-            boolean updated = missionDAO.updateMissionStatus(missionId, statut, description);
+            boolean updated = missionDAO.updateMissionStatus(missionId, statut);
             if (updated) {
                 return Response.ok(accepte ? "Mission acceptée." : "Mission refusée. Motif : " + motif).build();
             } else {
