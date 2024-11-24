@@ -1,6 +1,5 @@
-/home/sara/Desktop/CODING/SOA/HelperProject/HelperProject/src/main/java/fr/insa/soa/RestProject/Review.java
-/home/sara/Desktop/CODING/SOA/HelperProject/HelperProject/src/main/java/fr/insa/soa/RestProject/test.java
-/home/sara/Desktop/CODING/SOA/HelperProject/HelperProject/src/main/java/fr/insa/soa/RestProject/DatabaseConnection.java
-/home/sara/Desktop/CODING/SOA/HelperProject/HelperProject/src/main/java/fr/insa/soa/RestProject/MissionDAO.java
-/home/sara/Desktop/CODING/SOA/HelperProject/HelperProject/src/main/java/fr/insa/soa/RestProject/MissionService.java
-/home/sara/Desktop/CODING/SOA/HelperProject/HelperProject/src/main/java/fr/insa/soa/RestProject/Mission.java
+/home/sara/Desktop/CODING/SOA/HelperProject/HelperProject/src/main/java/fr/insa/soa/RestProject/model/Review.java
+/home/sara/Desktop/CODING/SOA/HelperProject/HelperProject/src/main/java/fr/insa/soa/RestProject/model/Mission.java
+/home/sara/Desktop/CODING/SOA/HelperProject/HelperProject/src/main/java/fr/insa/soa/RestProject/Database/DatabaseConnection.java
+/home/sara/Desktop/CODING/SOA/HelperProject/HelperProject/src/main/java/fr/insa/soa/RestProject/DataObjectAccess/MissionDAO.java
+/home/sara/Desktop/CODING/SOA/HelperProject/HelperProject/src/main/java/fr/insa/soa/RestProject/controller/MissionController.java

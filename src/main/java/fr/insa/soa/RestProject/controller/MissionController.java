@@ -5,12 +5,15 @@ import fr.insa.soa.RestProject.model.Mission;
 import jakarta.ws.rs.*;
 import jakarta.ws.rs.core.MediaType;
 import jakarta.ws.rs.core.Response;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 import java.util.List;
 
 @Path("/missions")
 public class MissionController {
-
+    // Logger for easier debugging
+    private static final Logger logger = LoggerFactory.getLogger(MissionDAO.class);
     private MissionDAO missionDAO = new MissionDAO();
 
     // Ajouter une mission
@@ -29,7 +32,7 @@ public class MissionController {
             Mission createdMission = missionDAO.createMission(mission);
             return Response.status(Response.Status.CREATED).entity(createdMission).build();
         } catch (Exception e) {
-            e.printStackTrace();
+            logger.error("Erreur lors de l'ajout de la mission : {}", e.getMessage(), e);
             return Response.status(Response.Status.INTERNAL_SERVER_ERROR)
                     .entity("Erreur lors de l'ajout de la mission : " + e.getMessage())
                     .build();
@@ -43,7 +46,7 @@ public class MissionController {
         try {
             return missionDAO.getAllMissions();
         } catch (Exception e) {
-            e.printStackTrace();
+            logger.error("Erreur lors de la récupération des missions : {}", e.getMessage(), e);
             throw new WebApplicationException("Erreur lors de la récupération des missions.", Response.Status.INTERNAL_SERVER_ERROR);
         }
     }
@@ -65,7 +68,7 @@ public class MissionController {
                 return Response.status(Response.Status.NOT_FOUND).entity("Mission introuvable.").build();
             }
         } catch (Exception e) {
-            e.printStackTrace();
+            logger.error("Erreur lors de la mise à jour de la mission : {}", e.getMessage(), e);
             return Response.status(Response.Status.INTERNAL_SERVER_ERROR)
                     .entity("Erreur lors de la mise à jour de la mission : " + e.getMessage())
                     .build();
@@ -84,7 +87,7 @@ public class MissionController {
                 return Response.status(Response.Status.NOT_FOUND).entity("Mission introuvable.").build();
             }
         } catch (Exception e) {
-            e.printStackTrace();
+            logger.error("Erreur lors de la suppression de la mission :  {}", e.getMessage(), e);
             return Response.status(Response.Status.INTERNAL_SERVER_ERROR)
                     .entity("Erreur lors de la suppression de la mission : " + e.getMessage())
                     .build();

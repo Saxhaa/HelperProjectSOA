@@ -1,6 +1,5 @@
-fr/insa/soa/RestProject/Review.class
-fr/insa/soa/RestProject/MissionDAO.class
-fr/insa/soa/RestProject/MissionService.class
-fr/insa/soa/RestProject/test.class
-fr/insa/soa/RestProject/Mission.class
-fr/insa/soa/RestProject/DatabaseConnection.class
+fr/insa/soa/RestProject/DataObjectAccess/MissionDAO.class
+fr/insa/soa/RestProject/Database/DatabaseConnection.class
+fr/insa/soa/RestProject/model/Mission.class
+fr/insa/soa/RestProject/model/Review.class
+fr/insa/soa/RestProject/controller/MissionController.class
