@@ -51,16 +51,16 @@ public class MissionController {
     // Accepter ou refuser une mission
     @PUT
     @Path("/{missionId}/decision")
-    public Response accepterOuRefuserMission(@PathParam("missionId") int missionId,
-                                             @QueryParam("accepte") boolean accepte,
+    public Response acceptOrRefuseMission(@PathParam("missionId") int missionId,
+                                             @QueryParam("accepté") boolean accept,
                                              @QueryParam("motif") String motif) {
         try {
-            int statut = accepte ? 2 : 3; // 2 : Acceptée, 3 : Refusée
-            String description = accepte ? null : motif;
+            int status = accept ? 2 : 3; // 2 : Acceptée, 3 : Refusée
+            String description = accept ? null : motif;
 
-            boolean updated = missionDAO.updateMissionStatus(missionId, statut);
+            boolean updated = missionDAO.updateMissionStatus(missionId, status);
             if (updated) {
-                return Response.ok(accepte ? "Mission acceptée." : "Mission refusée. Motif : " + motif).build();
+                return Response.ok(accept ? "Mission acceptée." : "Mission refusée. Motif : " + motif).build();
             } else {
                 return Response.status(Response.Status.NOT_FOUND).entity("Mission introuvable.").build();
             }
