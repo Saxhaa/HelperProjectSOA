@@ -5,17 +5,10 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="a8fb0447-6ce7-463b-86e7-bdabdf7138d5" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/common/pom.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/user-service/src/main/java/fr/insa/UserMicroservice/controller/UserController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/user-service/src/main/java/fr/insa/UserMicroservice/model/UserModel.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/user-service/src/main/java/fr/insa/UserMicroservice/repository/UserRepository.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/jarRepositories.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/jarRepositories.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/fr/insa/soa/helperproject/HelperProjectApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/common/src/main/java/fr/insa/soa/helperproject/HelperProjectApplication.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/common/src/main/resources/application.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/authentification.xml" beforeDir="false" afterPath="$PROJECT_DIR$/common/src/main/resources/templates/authentification.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/notifications.xml" beforeDir="false" afterPath="$PROJECT_DIR$/common/src/main/resources/templates/notifications.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/fr/insa/soa/helperproject/HelperProjectApplicationTests.java" beforeDir="false" afterPath="$PROJECT_DIR$/common/src/test/java/fr/insa/soa/helperproject/HelperProjectApplicationTests.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/user-service/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/user-service/pom.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -62,8 +55,7 @@
     "Application.test.executor": "Run",
     "DefaultHtmlFileTemplate": "HTML File",
     "RunOnceActivity.ShowReadmeOnStart": "true",
-    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
-    "git-widget-placeholder": "master",
+    "git-widget-placeholder": "microservices",
     "kotlin-language-version-configured": "true",
     "last_opened_file_path": "/home/sara/Desktop/CODING/SOA/HelperProject/HelperProject/user-service/pom.xml",
     "node.js.detected.package.eslint": "true",
@@ -245,7 +237,7 @@
       <workItem from="1732447924014" duration="3167000" />
       <workItem from="1732451106432" duration="3539000" />
       <workItem from="1732530732940" duration="103000" />
-      <workItem from="1732610190408" duration="4683000" />
+      <workItem from="1732610190408" duration="6082000" />
     </task>
     <servers />
   </component>
