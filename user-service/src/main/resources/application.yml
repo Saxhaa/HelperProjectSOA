@@ -1,0 +1,13 @@
+spring:
+  datasource:
+    url: jdbc:mysql://srv-bdens.insa-toulouse.fr:3306/user
+    username: projet_gei_047
+    password: Aiboot5i
+    driver-class-name: com.mysql.cj.jdbc.Driver
+  jpa:
+    hibernate:
+      ddl-auto: update  # Automatically updates the database schema (useful for dev)
+    show-sql: true
+
+server:
+  port: 8080
