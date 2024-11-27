@@ -127,7 +127,7 @@ public class UserController {
         userService.saveUser(user.get());
         logger.debug("Password updated successfully for user ID: " + userId);
 
-        return ResponseEntity.ok("Password updated successfully");
+        return ResponseEntity.ok(user.get());
     }
 
 

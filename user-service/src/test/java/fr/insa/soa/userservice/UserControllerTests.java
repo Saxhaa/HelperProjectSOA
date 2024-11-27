@@ -23,6 +23,7 @@ import static org.mockito.Mockito.when;
 import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.*;
 import static org.springframework.test.web.servlet.result.MockMvcResultHandlers.print;
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.*;
+import static org.springframework.web.servlet.function.RequestPredicates.param;
 
 @SpringBootTest
 @AutoConfigureMockMvc
@@ -52,7 +53,7 @@ public class UserControllerTests {
 
     @Test
     void testCreateUser() throws Exception {
-        //when(userService.saveUser(user)).thenReturn(user);
+        when(userService.saveUser(user)).thenReturn(user);
 
         mockMvc.perform(post("/user/create")
                         .contentType(MediaType.APPLICATION_JSON)
@@ -73,8 +74,22 @@ public class UserControllerTests {
 
     @Test
     void testDeleteUser() throws Exception {
+        when(userService.getUserById(1)).thenReturn(Optional.ofNullable(user));
+
         mockMvc.perform(delete("/user/1"))
                 .andDo(print())  // Add this to print the request and response details to the console
                 .andExpect(status().isNoContent());
+    }
+
+    @Test
+    void testChangePassword() throws Exception {
+        when(userService.getUserById(1)).thenReturn(Optional.ofNullable(user));
+
+        mockMvc.perform(put("/user/password")
+                        .param("userId", "1")
+                        .param("newPassword", "aNewPassword"))
+                .andDo(print())  // Add this to print the request and response details to the console
+                .andExpect(status().isOk())
+                .andExpect(jsonPath("$.password").value("aNewPassword"));
     }
 }
