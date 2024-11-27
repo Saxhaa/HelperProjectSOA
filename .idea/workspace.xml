@@ -5,25 +5,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="a8fb0447-6ce7-463b-86e7-bdabdf7138d5" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/user-service/src/main/resources/log4j2.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/common/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/common/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/user-service/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/user-service/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/user-service/src/main/java/fr/insa/soa/userservice/UserServiceApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/user-service/src/main/java/fr/insa/soa/userservice/UserServiceApplication.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/user-service/src/main/java/fr/insa/soa/userservice/controller/UserController.java" beforeDir="false" afterPath="$PROJECT_DIR$/user-service/src/main/java/fr/insa/soa/userservice/controller/UserController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/user-service/src/main/java/fr/insa/soa/userservice/model/Helper.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/user-service/src/main/java/fr/insa/soa/userservice/model/User.java" beforeDir="false" afterPath="$PROJECT_DIR$/user-service/src/main/java/fr/insa/soa/userservice/model/User.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/user-service/src/main/java/fr/insa/soa/userservice/model/UserDTO.java" beforeDir="false" afterPath="$PROJECT_DIR$/user-service/src/main/java/fr/insa/soa/userservice/model/UserDTO.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/user-service/src/main/java/fr/insa/soa/userservice/model/Validator.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/user-service/src/main/java/fr/insa/soa/userservice/model/Vulnerable.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/user-service/src/main/java/fr/insa/soa/userservice/service/UserService.java" beforeDir="false" afterPath="$PROJECT_DIR$/user-service/src/main/java/fr/insa/soa/userservice/service/UserService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/user-service/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/user-service/src/main/resources/application.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/user-service/src/main/resources/application.yml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/user-service/src/test/java/fr/insa/soa/userservice/UserControllerTests.java" beforeDir="false" afterPath="$PROJECT_DIR$/user-service/src/test/java/fr/insa/soa/userservice/UserControllerTests.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -128,7 +111,7 @@
       </set>
     </option>
   </component>
-  <component name="RunManager" selected="JUnit.UserControllerTests (1)">
+  <component name="RunManager" selected="Spring Boot.UserServiceApplication">
     <configuration name="UserControllerTests (1)" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="user-service" />
       <extension name="coverage">
@@ -372,7 +355,7 @@
       <workItem from="1732530732940" duration="103000" />
       <workItem from="1732610190408" duration="17930000" />
       <workItem from="1732629939692" duration="2671000" />
-      <workItem from="1732639091025" duration="13688000" />
+      <workItem from="1732639091025" duration="14316000" />
     </task>
     <servers />
   </component>

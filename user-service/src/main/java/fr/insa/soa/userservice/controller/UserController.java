@@ -24,42 +24,80 @@ public class UserController {
     private UserService userService;
     private static final Logger logger = LogManager.getLogger(UserController.class);
 
-
     @PostMapping("/create")
-    public ResponseEntity<User> createProfile(@RequestBody User user){
+    public ResponseEntity<Object> createProfile(@RequestBody User user) {
         logger.debug("Received user: " + user);
+        // TODO : Handling edge cases could be added to front-end, before calling controller
+
+        // If no userName specified
+        if (user.getUserName() == null || user.getUserName().isEmpty()) {
+            logger.warn("Invalid user data: Missing username");
+            return ResponseEntity.status(HttpStatus.SC_BAD_REQUEST)
+                    .body("Invalid user data: Missing username");
+        }
+
+        // If no password specified
+        if (user.getPassword() == null || user.getPassword().isEmpty()) {
+            logger.warn("Invalid user data: Missing password");
+            return ResponseEntity.status(HttpStatus.SC_BAD_REQUEST)
+                    .body("Invalid user data: Missing password");
+        }
+
         User savedUser = userService.saveUser(user);
         logger.debug("Saved user: " + savedUser);
-        return ResponseEntity
-                .status(HttpStatus.SC_CREATED)
+
+        return ResponseEntity.status(HttpStatus.SC_CREATED)
                 .contentType(MediaType.APPLICATION_JSON)
                 .body(savedUser);
     }
 
     // Get a User by ID
     @GetMapping("/{id}")
-    public ResponseEntity<User> getUserById(@PathVariable int id) {
+    public ResponseEntity<Object> getUserById(@PathVariable int id) {
         logger.debug("Searching for user with id : " + id);
+
         Optional<User> user = userService.getUserById(id);
-        logger.debug("Found User : " + user);
-        return user.map(ResponseEntity::ok).orElseGet(() -> ResponseEntity.notFound().build());
+        if (!(user.isPresent())) {
+            logger.warn("User with id " + id + " not found");
+            return ResponseEntity.status(HttpStatus.SC_NOT_FOUND)
+                    .body("User with ID " + id + " not found");
+        }
+
+        logger.debug("Found User : " + user.get());
+        return ResponseEntity.ok(user.get());
     }
 
     // Get all Users
     @GetMapping("/all")
-    public ResponseEntity<List<User>> getAllUsers() {
-        logger.debug("Acessing all users");
+    public ResponseEntity<Object> getAllUsers() {
+        logger.debug("Accessing all users");
         List<User> users = userService.getAllUsers();
-        logger.debug("All user: " + users);
-        return new ResponseEntity<>(users, HttpStatusCode.valueOf(HttpStatus.SC_OK));
+
+        if (users.isEmpty()) {
+            logger.info("No users found in the system");
+            return ResponseEntity.status(HttpStatus.SC_OK)
+                    .body("No users found in the system");
+        }
+
+        logger.debug("All users: " + users);
+        return ResponseEntity.ok(users);
     }
 
     // Delete a User
     @DeleteMapping("/{id}")
     @Transactional
-    public ResponseEntity<Void> deleteUser(@PathVariable int id) {
+    public ResponseEntity<Object> deleteUser(@PathVariable int id) {
         logger.debug("Deleting user with id : " + id);
+
+        Optional<User> user = userService.getUserById(id);
+        if (!(user.isPresent())) {
+            logger.warn("User with id " + id + " not found for deletion");
+            return ResponseEntity.status(HttpStatus.SC_NOT_FOUND)
+                    .body("User with ID " + id + " not found");
+        }
+
         userService.deleteUser(id);
+        logger.debug("User with id " + id + " deleted successfully");
         return ResponseEntity.noContent().build();
     }
 
@@ -69,8 +107,33 @@ public class UserController {
     }
 
     @PutMapping("/password")
-    public void changePassword(){
+    public ResponseEntity<Object> changePassword(@RequestParam int userId, @RequestParam String newPassword) {
+        logger.debug("Request to change password for user ID: " + userId);
 
+        if (newPassword == null || newPassword.isEmpty()) {
+            logger.warn("Password change request missing new password");
+            return ResponseEntity.status(HttpStatus.SC_BAD_REQUEST)
+                    .body("New password cannot be empty");
+        }
+
+        Optional<User> user = userService.getUserById(userId);
+        if (!(user.isPresent())) {
+            logger.warn("User with ID " + userId + " not found for password change");
+            return ResponseEntity.status(HttpStatus.SC_NOT_FOUND)
+                    .body("User with ID " + userId + " not found");
+        }
+
+        user.get().setPassword(newPassword);
+        userService.saveUser(user.get());
+        logger.debug("Password updated successfully for user ID: " + userId);
+
+        return ResponseEntity.ok("Password updated successfully");
     }
 
+
 }
+
+
+
+
+
