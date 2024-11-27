@@ -5,30 +5,25 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="a8fb0447-6ce7-463b-86e7-bdabdf7138d5" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/dataSources.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/user-service/src/main/java/fr/insa/soa/userservice/controller/UserController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/user-service/src/main/java/fr/insa/soa/userservice/mapper/UserMapper.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/user-service/src/main/java/fr/insa/soa/userservice/model/Helper.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/user-service/src/main/java/fr/insa/soa/userservice/model/User.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/user-service/src/main/java/fr/insa/soa/userservice/model/UserDTO.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/user-service/src/main/java/fr/insa/soa/userservice/model/Validator.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/user-service/src/main/java/fr/insa/soa/userservice/model/Vulnerable.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/user-service/src/main/java/fr/insa/soa/userservice/repository/UserRepository.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/user-service/src/main/java/fr/insa/soa/userservice/service/UserService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/user-service/src/main/resources/application.yml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/user-service/src/test/java/fr/insa/soa/userservice/UserControllerTests.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/user-service/src/test/java/fr/insa/soa/userservice/UserServiceTests.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/user-service/src/main/resources/log4j2.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/common/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/common/pom.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/user-service/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/user-service/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/user-service/src/main/java/fr/insa/UserMicroservice/UserMicroserviceApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/user-service/src/main/java/fr/insa/soa/userservice/UserServiceApplication.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/user-service/src/main/java/fr/insa/UserMicroservice/controller/UserController.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/user-service/src/main/java/fr/insa/UserMicroservice/model/UserModel.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/user-service/src/main/java/fr/insa/UserMicroservice/repository/UserRepository.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/user-service/src/main/java/fr/insa/soa/userservice/UserServiceApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/user-service/src/main/java/fr/insa/soa/userservice/UserServiceApplication.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/user-service/src/main/java/fr/insa/soa/userservice/controller/UserController.java" beforeDir="false" afterPath="$PROJECT_DIR$/user-service/src/main/java/fr/insa/soa/userservice/controller/UserController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/user-service/src/main/java/fr/insa/soa/userservice/model/Helper.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/user-service/src/main/java/fr/insa/soa/userservice/model/User.java" beforeDir="false" afterPath="$PROJECT_DIR$/user-service/src/main/java/fr/insa/soa/userservice/model/User.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/user-service/src/main/java/fr/insa/soa/userservice/model/UserDTO.java" beforeDir="false" afterPath="$PROJECT_DIR$/user-service/src/main/java/fr/insa/soa/userservice/model/UserDTO.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/user-service/src/main/java/fr/insa/soa/userservice/model/Validator.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/user-service/src/main/java/fr/insa/soa/userservice/model/Vulnerable.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/user-service/src/main/java/fr/insa/soa/userservice/service/UserService.java" beforeDir="false" afterPath="$PROJECT_DIR$/user-service/src/main/java/fr/insa/soa/userservice/service/UserService.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/user-service/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/user-service/src/main/resources/application.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/user-service/src/test/java/fr/insa/UserMicroservice/UserMicroserviceApplicationTests.java" beforeDir="false" afterPath="$PROJECT_DIR$/user-service/src/test/java/fr/insa/soa/userservice/UserMicroserviceApplicationTests.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/user-service/src/main/resources/application.yml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/user-service/src/test/java/fr/insa/soa/userservice/UserControllerTests.java" beforeDir="false" afterPath="$PROJECT_DIR$/user-service/src/test/java/fr/insa/soa/userservice/UserControllerTests.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -47,7 +42,7 @@
   <component name="Git.Settings">
     <option name="RECENT_BRANCH_BY_REPOSITORY">
       <map>
-        <entry key="$PROJECT_DIR$" value="soap" />
+        <entry key="$PROJECT_DIR$" value="microservices" />
       </map>
     </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -75,9 +70,12 @@
     "Application.test.executor": "Run",
     "DefaultHtmlFileTemplate": "HTML File",
     "JUnit.UserControllerTest.executor": "Run",
+    "JUnit.UserControllerTests (1).executor": "Run",
     "JUnit.UserControllerTests.executor": "Run",
+    "JUnit.UserControllerTests.testCreateUser (1).executor": "Debug",
     "JUnit.UserControllerTests.testCreateUser.executor": "Run",
     "JUnit.UserServiceTest.executor": "Run",
+    "JUnit.UserServiceTests (1).executor": "Run",
     "JUnit.UserServiceTests.executor": "Run",
     "RequestMappingsPanelOrder0": "0",
     "RequestMappingsPanelOrder1": "1",
@@ -85,13 +83,14 @@
     "RequestMappingsPanelWidth1": "75",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "SHARE_PROJECT_CONFIGURATION_FILES": "true",
+    "Spring Boot.HelperProjectApplication.executor": "Run",
     "Spring Boot.UserServiceApplication (1).executor": "Run",
     "Spring Boot.UserServiceApplication (3).executor": "Run",
     "Spring Boot.UserServiceApplication (4).executor": "Run",
     "Spring Boot.UserServiceApplication.executor": "Run",
-    "git-widget-placeholder": "microservices",
+    "git-widget-placeholder": "UserServices",
     "kotlin-language-version-configured": "true",
-    "last_opened_file_path": "/home/sara/Desktop/CODING/SOA/HelperProject/HelperProject/user-service/pom.xml",
+    "last_opened_file_path": "/home/sara/Desktop/CODING/SOA/HelperProject/HelperProject/pom.xml",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",
@@ -129,7 +128,22 @@
       </set>
     </option>
   </component>
-  <component name="RunManager" selected="Spring Boot.UserServiceApplication">
+  <component name="RunManager" selected="JUnit.UserControllerTests (1)">
+    <configuration name="UserControllerTests (1)" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="user-service" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="fr.insa.soa.userservice.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="fr.insa.soa.userservice" />
+      <option name="MAIN_CLASS_NAME" value="fr.insa.soa.userservice.UserControllerTests" />
+      <option name="TEST_OBJECT" value="class" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <configuration name="UserControllerTests" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="UserMicroservice" />
       <extension name="coverage">
@@ -158,6 +172,21 @@
       <option name="MAIN_CLASS_NAME" value="fr.insa.soa.userservice.UserControllerTests" />
       <option name="METHOD_NAME" value="testCreateUser" />
       <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="UserServiceTests (1)" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="user-service" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="fr.insa.soa.userservice.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="fr.insa.soa.userservice" />
+      <option name="MAIN_CLASS_NAME" value="fr.insa.soa.userservice.UserServiceTests" />
+      <option name="TEST_OBJECT" value="class" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -226,8 +255,9 @@
       <option name="launchJavascriptDebuger" value="false" />
       <method v="2" />
     </configuration>
-    <configuration name="HelperProjectApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" nameIsGenerated="true">
-      <option name="FRAME_DEACTIVATION_UPDATE_POLICY" value="UpdateClassesAndResources" />
+    <configuration name="HelperProjectApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot">
+      <option name="ALTERNATIVE_JRE_PATH" value="17" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="true" />
       <module name="common" />
       <option name="SPRING_BOOT_MAIN_CLASS" value="fr.insa.soa.helperproject.HelperProjectApplication" />
       <method v="2">
@@ -235,7 +265,7 @@
       </method>
     </configuration>
     <configuration name="UserServiceApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" nameIsGenerated="true">
-      <module name="HelperProject" />
+      <module name="user-service" />
       <option name="SPRING_BOOT_MAIN_CLASS" value="fr.insa.soa.userservice.UserServiceApplication" />
       <method v="2">
         <option name="Make" enabled="true" />
@@ -301,18 +331,21 @@
       <method v="2" />
     </configuration>
     <list>
+      <item itemvalue="JUnit.UserControllerTests (1)" />
+      <item itemvalue="JUnit.UserServiceTests (1)" />
       <item itemvalue="JUnit.UserControllerTests" />
       <item itemvalue="JUnit.UserControllerTests.testCreateUser" />
       <item itemvalue="JUnit.UserServiceTests" />
-      <item itemvalue="Spring Boot.HelperProjectApplication" />
       <item itemvalue="Spring Boot.UserServiceApplication" />
+      <item itemvalue="Spring Boot.HelperProjectApplication" />
     </list>
     <recent_temporary>
       <list>
+        <item itemvalue="JUnit.UserControllerTests (1)" />
+        <item itemvalue="JUnit.UserServiceTests (1)" />
         <item itemvalue="Spring Boot.UserServiceApplication" />
         <item itemvalue="JUnit.UserControllerTests" />
         <item itemvalue="JUnit.UserControllerTests.testCreateUser" />
-        <item itemvalue="JUnit.UserServiceTests" />
       </list>
     </recent_temporary>
   </component>
@@ -338,6 +371,8 @@
       <workItem from="1732451106432" duration="3539000" />
       <workItem from="1732530732940" duration="103000" />
       <workItem from="1732610190408" duration="17930000" />
+      <workItem from="1732629939692" duration="2671000" />
+      <workItem from="1732639091025" duration="13688000" />
     </task>
     <servers />
   </component>

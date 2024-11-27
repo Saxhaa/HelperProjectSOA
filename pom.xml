@@ -25,7 +25,7 @@
             <dependency>
                 <groupId>org.springframework.boot</groupId>
                 <artifactId>spring-boot-dependencies</artifactId>
-                <version>3.1.0</version>
+                <version>3.2.3</version>
                 <type>pom</type>
                 <scope>import</scope>
             </dependency>
@@ -40,15 +40,9 @@
                     <groupId>org.springframework.boot</groupId>
                     <artifactId>spring-boot-maven-plugin</artifactId>
                     <configuration>
-                        <excludes>
-                            <exclude>
-                                <groupId>org.projectlombok</groupId>
-                                <artifactId>lombok</artifactId>
-                            </exclude>
-                        </excludes>
                         <mainClass>fr.insa.soa.userservice.UserServiceApplication</mainClass> <!-- Update with your main class -->
                     </configuration>
-                    <version>3.1.0</version>
+                    <version>3.2.3</version>
                 </plugin>
 
                 <plugin>
@@ -58,6 +52,9 @@
                     <configuration>
                         <source>17</source> <!-- Update to match your desired Java version -->
                         <target>17</target>
+                        <compilerArgs>
+                            <arg>-parameters</arg>
+                        </compilerArgs>
                     </configuration>
                 </plugin>
             </plugins>
