@@ -15,6 +15,8 @@
     <modules>
         <module>common</module>
         <module>user-service</module>
+        <module>mission-service</module>
+        <module>discovery-service</module>
         <!--module>gateway-service</module>
         <module>config-server</module-->
     </modules>
@@ -25,7 +27,7 @@
             <dependency>
                 <groupId>org.springframework.boot</groupId>
                 <artifactId>spring-boot-dependencies</artifactId>
-                <version>3.2.3</version>
+                <version>3.3.3</version>
                 <type>pom</type>
                 <scope>import</scope>
             </dependency>
@@ -108,6 +110,12 @@
             <groupId>org.hibernate.orm</groupId>
             <artifactId>hibernate-core</artifactId>
         </dependency>
+        <dependency>
+            <groupId>org.springframework.cloud</groupId>
+            <artifactId>spring-cloud-netflix-eureka-server</artifactId>
+            <version>4.2.0-RC1</version>
+            <scope>compile</scope>
+        </dependency>
     </dependencies>
 
 
@@ -124,4 +132,3 @@
     </repositories>
 
 </project>
-

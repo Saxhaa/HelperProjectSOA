@@ -7,8 +7,10 @@
         <sourceOutputDir name="target/generated-sources/annotations" />
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
-        <module name="UserMicroservice" />
         <module name="user-service" />
+        <module name="mission-service" />
+        <module name="discovery-service" />
+        <module name="UserMicroservice" />
       </profile>
       <profile name="Annotation profile for Helper-project" enabled="true">
         <sourceOutputDir name="target/generated-sources/annotations" />
@@ -32,6 +34,8 @@
       <module name="HelperProject" options="" />
       <module name="UserMicroservice" options="" />
       <module name="common" options="-parameters" />
+      <module name="discovery-service" options="-parameters" />
+      <module name="mission-service" options="-parameters" />
       <module name="user-service" options="-parameters" />
     </option>
   </component>

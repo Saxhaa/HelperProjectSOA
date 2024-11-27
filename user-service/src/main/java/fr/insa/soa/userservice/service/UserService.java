@@ -1,10 +1,7 @@
 package fr.insa.soa.userservice.service;
 
-import fr.insa.soa.userservice.mapper.UserMapper;
 import fr.insa.soa.userservice.model.User;
-import fr.insa.soa.userservice.model.UserDTO;
 import fr.insa.soa.userservice.repository.UserRepository;
-import jakarta.transaction.Transactional;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 

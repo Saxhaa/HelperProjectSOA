@@ -1,30 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <dataSource name="projet_gei_047">
   <database-model serializer="dbm" dbms="MYSQL" family-id="MYSQL" format-version="4.52">
-    <root id="1">
-      <DefaultCasing>exact</DefaultCasing>
-      <DefaultEngine>InnoDB</DefaultEngine>
-      <DefaultTmpEngine>InnoDB</DefaultTmpEngine>
-      <Grants>projet_gei_047|schema||projet_gei_047||ALTER|G
-projet_gei_047|schema||projet_gei_047||ALTER ROUTINE|G
-projet_gei_047|schema||projet_gei_047||CREATE|G
-projet_gei_047|schema||projet_gei_047||CREATE ROUTINE|G
-projet_gei_047|schema||projet_gei_047||CREATE TEMPORARY TABLES|G
-projet_gei_047|schema||projet_gei_047||CREATE VIEW|G
-projet_gei_047|schema||projet_gei_047||DELETE|G
-projet_gei_047|schema||projet_gei_047||DROP|G
-projet_gei_047|schema||projet_gei_047||EVENT|G
-projet_gei_047|schema||projet_gei_047||EXECUTE|G
-projet_gei_047|schema||projet_gei_047||INDEX|G
-projet_gei_047|schema||projet_gei_047||INSERT|G
-projet_gei_047|schema||projet_gei_047||LOCK TABLES|G
-projet_gei_047|schema||projet_gei_047||REFERENCES|G
-projet_gei_047|schema||projet_gei_047||SELECT|G
-projet_gei_047|schema||projet_gei_047||SHOW VIEW|G
-projet_gei_047|schema||projet_gei_047||TRIGGER|G
-projet_gei_047|schema||projet_gei_047||UPDATE|G</Grants>
-      <ServerVersion>5.7.42</ServerVersion>
-    </root>
+    <root id="1"/>
     <collation id="2" parent="1" name="armscii8_bin">
       <Charset>armscii8</Charset>
     </collation>
