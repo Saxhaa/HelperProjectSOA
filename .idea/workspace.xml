@@ -4,66 +4,28 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="a8fb0447-6ce7-463b-86e7-bdabdf7138d5" name="Changes" comment="">
+    <list default="true" id="a8fb0447-6ce7-463b-86e7-bdabdf7138d5" name="Changes" comment="Update path to artifact">
+      <change afterPath="$PROJECT_DIR$/configuration-service/.gitattributes" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/configuration-service/.gitignore" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/configuration-service/.mvn/wrapper/maven-wrapper.properties" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/configuration-service/mvnw" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/configuration-service/mvnw.cmd" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/configuration-service/pom.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/configuration-service/src/main/java/fr/insa/soa/server/config/ConfigServer/ConfigServerApplication.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/configuration-service/src/main/resources/application.properties" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/configuration-service/src/test/java/fr/insa/soa/server/config/ConfigServer/ConfigServerApplicationTests.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/mission-service/src/main/java/fr/insa/soa/missionService/config/DatabaseConfig.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources.local.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources.local.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources/18a68d4b-f3e9-4e2c-997b-994e1c004da5.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources/18a68d4b-f3e9-4e2c-997b-994e1c004da5.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/encodings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/encodings.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/UserServices" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/common/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/common/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/missionManagementMS/.gitattributes" beforeDir="false" afterPath="$PROJECT_DIR$/discovery-service/.gitattributes" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/missionManagementMS/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/discovery-service/.gitignore" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/missionManagementMS/.mvn/wrapper/maven-wrapper.properties" beforeDir="false" afterPath="$PROJECT_DIR$/discovery-service/.mvn/wrapper/maven-wrapper.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/missionManagementMS/mvnw" beforeDir="false" afterPath="$PROJECT_DIR$/discovery-service/bin/mvnw" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/missionManagementMS/mvnw.cmd" beforeDir="false" afterPath="$PROJECT_DIR$/discovery-service/bin/mvnw.cmd" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/missionManagementMS/pom.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/missionManagementMS/src/main/java/fr/insa/soa/missionManagementMS/MissionManagementMsApplication.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/missionManagementMS/src/main/java/fr/insa/soa/missionManagementMS/controller/MissionController.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/missionManagementMS/src/main/java/fr/insa/soa/missionManagementMS/model/Mission.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/missionManagementMS/src/main/java/fr/insa/soa/missionManagementMS/repository/MissionRepository.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/missionManagementMS/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/mission-service/src/main/resources/application.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/missionManagementMS/src/test/java/fr/insa/soa/missionManagementMS/MissionManagementMsApplicationTests.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/missionService/.gitattributes" beforeDir="false" afterPath="$PROJECT_DIR$/discovery-service/bin/.gitattributes" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/missionService/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/discovery-service/bin/.gitignore" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/missionService/.mvn/wrapper/maven-wrapper.properties" beforeDir="false" afterPath="$PROJECT_DIR$/discovery-service/bin/.mvn/wrapper/maven-wrapper.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/missionService/mvnw" beforeDir="false" afterPath="$PROJECT_DIR$/discovery-service/mvnw" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/missionService/mvnw.cmd" beforeDir="false" afterPath="$PROJECT_DIR$/discovery-service/mvnw.cmd" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/missionService/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/mission-service/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/missionService/src/main/java/fr/insa/soa/missionService/MissionServiceApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/mission-service/src/main/java/fr/insa/soa/missionService/MissionServiceApplication.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/missionService/src/main/java/fr/insa/soa/missionService/config/MyConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/mission-service/src/main/java/fr/insa/soa/missionService/config/MyConfig.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/missionService/src/main/java/fr/insa/soa/missionService/controller/MissionController.java" beforeDir="false" afterPath="$PROJECT_DIR$/mission-service/src/main/java/fr/insa/soa/missionService/controller/MissionController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/missionService/src/main/java/fr/insa/soa/missionService/model/Mission.java" beforeDir="false" afterPath="$PROJECT_DIR$/mission-service/src/main/java/fr/insa/soa/missionService/model/Mission.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/missionService/src/main/java/fr/insa/soa/missionService/repository/MissionRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/mission-service/src/main/java/fr/insa/soa/missionService/repository/MissionRepository.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/missionService/src/main/java/fr/insa/soa/missionService/service/MissionService.java" beforeDir="false" afterPath="$PROJECT_DIR$/mission-service/src/main/java/fr/insa/soa/missionService/service/MissionService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/missionService/src/main/resources/application.properties" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/missionService/src/main/resources/log4j2.xml" beforeDir="false" afterPath="$PROJECT_DIR$/mission-service/src/main/resources/log4j2.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/missionService/src/test/java/fr/insa/soa/missionService/MissionServiceApplicationTests.java" beforeDir="false" afterPath="$PROJECT_DIR$/mission-service/src/test/java/fr/insa/soa/missionService/MissionServiceApplicationTests.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/msDiscovery/.gitattributes" beforeDir="false" afterPath="$PROJECT_DIR$/mission-service/.gitattributes" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/msDiscovery/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/mission-service/.gitignore" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/msDiscovery/.mvn/wrapper/maven-wrapper.properties" beforeDir="false" afterPath="$PROJECT_DIR$/mission-service/.mvn/wrapper/maven-wrapper.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/msDiscovery/bin/.gitattributes" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/msDiscovery/bin/.gitignore" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/msDiscovery/bin/.mvn/wrapper/maven-wrapper.properties" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/msDiscovery/bin/mvnw" beforeDir="false" afterPath="$PROJECT_DIR$/mission-service/mvnw" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/msDiscovery/bin/mvnw.cmd" beforeDir="false" afterPath="$PROJECT_DIR$/mission-service/mvnw.cmd" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/msDiscovery/bin/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/discovery-service/bin/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/msDiscovery/bin/src/main/java/fr/insa/soa/msDiscovery/MsDiscoveryApplication.class" beforeDir="false" afterPath="$PROJECT_DIR$/discovery-service/bin/src/main/java/fr/insa/soa/msDiscovery/MsDiscoveryApplication.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/msDiscovery/bin/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/discovery-service/bin/src/main/resources/application.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/msDiscovery/bin/src/test/java/fr/insa/soa/msDiscovery/MsDiscoveryApplicationTests.class" beforeDir="false" afterPath="$PROJECT_DIR$/discovery-service/bin/src/test/java/fr/insa/soa/msDiscovery/MsDiscoveryApplicationTests.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/msDiscovery/mvnw" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/msDiscovery/mvnw.cmd" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/msDiscovery/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/discovery-service/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/msDiscovery/src/main/java/fr/insa/soa/msDiscovery/MsDiscoveryApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/discovery-service/src/main/java/fr/insa/soa/discoveryService/DiscoveryServiceApplication.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/msDiscovery/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/discovery-service/src/main/resources/application.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/msDiscovery/src/test/java/fr/insa/soa/msDiscovery/MsDiscoveryApplicationTests.java" beforeDir="false" afterPath="$PROJECT_DIR$/discovery-service/src/test/java/fr/insa/soa/discoveryService/MsDiscoveryApplicationTests.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/user-service/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/user-service/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/user-service/src/main/java/fr/insa/soa/userservice/UserServiceApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/user-service/src/main/java/fr/insa/soa/userservice/UserServiceApplication.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/user-service/src/main/java/fr/insa/soa/userservice/mapper/UserMapper.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/user-service/src/main/java/fr/insa/soa/userservice/service/UserService.java" beforeDir="false" afterPath="$PROJECT_DIR$/user-service/src/main/java/fr/insa/soa/userservice/service/UserService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/config/discovery-service.properties" beforeDir="false" afterPath="$PROJECT_DIR$/config/discovery-service.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/config/mission-service.properties" beforeDir="false" afterPath="$PROJECT_DIR$/config/mission-service.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/config/user-service.properties" beforeDir="false" afterPath="$PROJECT_DIR$/config/user-service.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/discovery-service/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/discovery-service/src/main/resources/application.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/mission-service/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/mission-service/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/mission-service/src/main/java/fr/insa/soa/missionService/MissionServiceApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/mission-service/src/main/java/fr/insa/soa/missionService/MissionServiceApplication.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/mission-service/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/mission-service/src/main/resources/application.properties" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/user-service/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/user-service/src/main/resources/application.properties" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -124,6 +86,7 @@
     "RequestMappingsPanelWidth1": "75",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "SHARE_PROJECT_CONFIGURATION_FILES": "true",
+    "Spring Boot.ConfigServerApplication.executor": "Run",
     "Spring Boot.DiscoveryServiceApplication (1).executor": "Run",
     "Spring Boot.DiscoveryServiceApplication.executor": "Run",
     "Spring Boot.HelperProjectApplication.executor": "Run",
@@ -132,10 +95,10 @@
     "Spring Boot.UserServiceApplication (3).executor": "Run",
     "Spring Boot.UserServiceApplication (4).executor": "Run",
     "Spring Boot.UserServiceApplication.executor": "Run",
-    "git-widget-placeholder": "UserServices",
+    "git-widget-placeholder": "master",
     "jdk.selected.JAVA_MODULE": "17",
     "kotlin-language-version-configured": "true",
-    "last_opened_file_path": "/home/sara/Desktop/CODING/SOA/HelperProjectSOA/pom.xml",
+    "last_opened_file_path": "/home/sara/Desktop/CODING/SOA/ConfigClient/pom.xml",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",
@@ -173,11 +136,17 @@
       </set>
     </option>
   </component>
-  <component name="RunManager" selected="Compound.AllMicroservices">
+  <component name="RunManager" selected="Compound.missionTest">
     <configuration name="AllMicroservices" type="CompoundRunConfigurationType">
       <toRun name="DiscoveryServiceApplication" type="SpringBootApplicationConfigurationType" />
       <toRun name="MissionServiceApplication" type="SpringBootApplicationConfigurationType" />
       <toRun name="UserServiceApplication" type="SpringBootApplicationConfigurationType" />
+      <method v="2" />
+    </configuration>
+    <configuration name="missionTest" type="CompoundRunConfigurationType">
+      <toRun name="ConfigServerApplication" type="SpringBootApplicationConfigurationType" />
+      <toRun name="DiscoveryServiceApplication" type="SpringBootApplicationConfigurationType" />
+      <toRun name="MissionServiceApplication" type="SpringBootApplicationConfigurationType" />
       <method v="2" />
     </configuration>
     <configuration name="UserControllerTests (1)" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
@@ -290,15 +259,9 @@
       <option name="launchJavascriptDebuger" value="false" />
       <method v="2" />
     </configuration>
-    <configuration name="DiscoveryServiceApplication (1)" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" temporary="true" nameIsGenerated="true">
-      <module name="Helper-project" />
-      <option name="SPRING_BOOT_MAIN_CLASS" value="fr.insa.soa.discoveryService.DiscoveryServiceApplication" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="fr.insa.soa.discoveryService.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
+    <configuration name="ConfigServerApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" nameIsGenerated="true">
+      <module name="configuration-service" />
+      <option name="SPRING_BOOT_MAIN_CLASS" value="fr.insa.soa.server.config.ConfigServer.ConfigServerApplication" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -400,19 +363,19 @@
     </configuration>
     <list>
       <item itemvalue="Compound.AllMicroservices" />
+      <item itemvalue="Compound.missionTest" />
       <item itemvalue="JUnit.UserControllerTests (1)" />
       <item itemvalue="JUnit.UserServiceTests (1)" />
       <item itemvalue="JUnit.UserControllerTests" />
       <item itemvalue="JUnit.UserServiceTests" />
+      <item itemvalue="Spring Boot.ConfigServerApplication" />
       <item itemvalue="Spring Boot.DiscoveryServiceApplication" />
       <item itemvalue="Spring Boot.UserServiceApplication" />
       <item itemvalue="Spring Boot.HelperProjectApplication" />
       <item itemvalue="Spring Boot.MissionServiceApplication" />
-      <item itemvalue="Spring Boot.DiscoveryServiceApplication (1)" />
     </list>
     <recent_temporary>
       <list>
-        <item itemvalue="Spring Boot.DiscoveryServiceApplication (1)" />
         <item itemvalue="JUnit.UserControllerTests (1)" />
         <item itemvalue="JUnit.UserServiceTests (1)" />
         <item itemvalue="Spring Boot.UserServiceApplication" />
