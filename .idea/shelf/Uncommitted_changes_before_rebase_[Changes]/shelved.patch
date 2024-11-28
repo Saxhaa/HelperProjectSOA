@@ -1,0 +1,56 @@
+Index: src/main/java/fr/insa/soa/helperproject/repository/UserRepository.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/src/main/java/fr/insa/soa/helperproject/repository/UserRepository.java b/src/main/java/fr/insa/soa/helperproject/repository/UserRepository.java
+new file mode 100644
+--- /dev/null	(date 1732610803004)
++++ b/src/main/java/fr/insa/soa/helperproject/repository/UserRepository.java	(date 1732610803004)
+@@ -0,0 +1,4 @@
++package fr.insa.soa.helperproject.repository;
++
++public class UserRepository {
++}
+Index: src/main/java/fr/insa/soa/helperproject/service/UserService.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/src/main/java/fr/insa/soa/helperproject/service/UserService.java b/src/main/java/fr/insa/soa/helperproject/service/UserService.java
+new file mode 100644
+--- /dev/null	(date 1732610822975)
++++ b/src/main/java/fr/insa/soa/helperproject/service/UserService.java	(date 1732610822975)
+@@ -0,0 +1,4 @@
++package fr.insa.soa.helperproject.service;
++
++public class UserService {
++}
+Index: src/main/java/fr/insa/soa/helperproject/UserController.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/src/main/java/fr/insa/soa/helperproject/UserController.java b/src/main/java/fr/insa/soa/helperproject/UserController.java
+new file mode 100644
+--- /dev/null	(date 1732611601773)
++++ b/src/main/java/fr/insa/soa/helperproject/UserController.java	(date 1732611601773)
+@@ -0,0 +1,4 @@
++package fr.insa.soa.helperproject;
++
++public class UserController {
++}
+Index: src/main/java/fr/insa/soa/helperproject/model/User.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/src/main/java/fr/insa/soa/helperproject/model/User.java b/src/main/java/fr/insa/soa/helperproject/model/User.java
+new file mode 100644
+--- /dev/null	(date 1732611601759)
++++ b/src/main/java/fr/insa/soa/helperproject/model/User.java	(date 1732611601759)
+@@ -0,0 +1,4 @@
++package fr.insa.soa.helperproject.model;
++
++public class User {
++}
