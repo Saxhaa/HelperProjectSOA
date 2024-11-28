@@ -1,7 +1,15 @@
-package fr.insa.soa.missionService.model;
+package fr.insa.soa.orchestratorService.model;
+
+
 
 import com.fasterxml.jackson.annotation.JsonProperty;
-import jakarta.persistence.*;
+
+import jakarta.persistence.Column;
+import jakarta.persistence.Entity;
+import jakarta.persistence.GeneratedValue;
+import jakarta.persistence.GenerationType;
+import jakarta.persistence.Id;
+import jakarta.persistence.Table;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
@@ -15,6 +23,8 @@ import lombok.Setter;
 @Table(name = "missions")
 public class Mission {
 	
+	public Mission() {
+	}
 
     @Id 
     @GeneratedValue(strategy = GenerationType.IDENTITY) // Génération automatique de l'ID
