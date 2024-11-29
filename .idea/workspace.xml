@@ -5,13 +5,13 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="a8fb0447-6ce7-463b-86e7-bdabdf7138d5" name="Changes" comment="Update path to artifact">
-      <change afterPath="$PROJECT_DIR$/mission-service/src/main/java/fr/insa/soa/missionService/config/DatabaseProperties.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/mission-service/src/main/java/fr/insa/soa/missionService/config/DatabasePropertiesLogger.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/config/mission-service.properties" beforeDir="false" afterPath="$PROJECT_DIR$/config/mission-service.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/mission-service/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/mission-service/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/configuration-service/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/configuration-service/src/main/resources/application.properties" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/mission-service/src/main/java/fr/insa/soa/missionService/MissionServiceApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/mission-service/src/main/java/fr/insa/soa/missionService/MissionServiceApplication.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/mission-service/src/main/java/fr/insa/soa/missionService/config/DatabaseConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/mission-service/src/main/java/fr/insa/soa/missionService/config/DataSourceConfig.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/mission-service/src/main/java/fr/insa/soa/missionService/config/DataSourceConfig.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/mission-service/src/main/java/fr/insa/soa/missionService/config/DatabaseProperties.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/mission-service/src/main/java/fr/insa/soa/missionService/config/DatabasePropertiesLogger.java" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/mission-service/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/mission-service/src/main/resources/application.properties" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -252,13 +252,6 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="DiscoveryServiceApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" nameIsGenerated="true">
-      <module name="discovery-service" />
-      <option name="SPRING_BOOT_MAIN_CLASS" value="fr.insa.soa.discoveryService.DiscoveryServiceApplication" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
     <configuration name="HelperProjectApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot">
       <option name="ALTERNATIVE_JRE_PATH" value="17" />
       <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="true" />
@@ -268,7 +261,7 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="MissionServiceApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" nameIsGenerated="true">
+    <configuration name="MissionServiceApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" temporary="true" nameIsGenerated="true">
       <module name="mission-service" />
       <option name="SPRING_BOOT_MAIN_CLASS" value="fr.insa.soa.missionService.MissionServiceApplication" />
       <extension name="coverage">
@@ -355,13 +348,13 @@
       <item itemvalue="JUnit.UserControllerTests" />
       <item itemvalue="JUnit.UserServiceTests" />
       <item itemvalue="Spring Boot.ConfigServerApplication" />
-      <item itemvalue="Spring Boot.DiscoveryServiceApplication" />
       <item itemvalue="Spring Boot.UserServiceApplication" />
       <item itemvalue="Spring Boot.HelperProjectApplication" />
       <item itemvalue="Spring Boot.MissionServiceApplication" />
     </list>
     <recent_temporary>
       <list>
+        <item itemvalue="Spring Boot.MissionServiceApplication" />
         <item itemvalue="JUnit.UserControllerTests (1)" />
         <item itemvalue="JUnit.UserServiceTests (1)" />
         <item itemvalue="Spring Boot.UserServiceApplication" />
