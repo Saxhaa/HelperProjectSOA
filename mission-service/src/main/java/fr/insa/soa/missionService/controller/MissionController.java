@@ -21,11 +21,16 @@ public class MissionController {
 
     @Autowired
     private MissionService missionService;
+    
+    @GetMapping("/call")
+    public void call() {
+    	System.out.println("mission called");
+    }
 
     // Get all missions
     @GetMapping
     public ResponseEntity<List<Mission>> getAllMissions() {
-        List<Mission> missions = missionService.getAllMissions();
+        List<Mission>missions = missionService.getAllMissions();
         return ResponseEntity.ok(missions);
     }
 

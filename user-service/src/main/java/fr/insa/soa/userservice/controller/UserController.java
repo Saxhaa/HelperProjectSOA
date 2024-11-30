@@ -66,6 +66,20 @@ public class UserController {
         logger.debug("Found User : " + user.get());
         return ResponseEntity.ok(user.get());
     }
+    
+    @GetMapping("/connect")
+    public ResponseEntity<User> getConnectedUser() {
+        try {
+            // Simule un utilisateur connecté (exemple d'un utilisateur avec ID = 1)
+            User user = new User(1, "personInNeed","connectedUser", "password123");
+
+            // Retourner une ResponseEntity avec un statut HTTP 200 (OK)
+            return ResponseEntity.ok(user);
+        } catch (Exception e) {
+            // Retourner une ResponseEntity avec un statut HTTP 500 en cas d'erreur
+            return ResponseEntity.status(500).body(null);
+        }
+    }
 
     // Get all Users
     @GetMapping("/all")
@@ -101,11 +115,7 @@ public class UserController {
         return ResponseEntity.noContent().build();
     }
 
-    @GetMapping("/connect")
-    public void connectToProfile(){
-
-    }
-
+  
     @PutMapping("/password")
     public ResponseEntity<Object> changePassword(@RequestParam int userId, @RequestParam String newPassword) {
         logger.debug("Request to change password for user ID: " + userId);

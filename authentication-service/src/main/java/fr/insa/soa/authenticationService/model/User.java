@@ -1,4 +1,4 @@
-package fr.insa.soa.orchestratorService.model;
+package fr.insa.soa.authenticationService.model;
 
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
@@ -13,9 +13,6 @@ import lombok.*;
 @NoArgsConstructor
 @Table(name = "user")
 public class User {
-	
-
-	
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int id;

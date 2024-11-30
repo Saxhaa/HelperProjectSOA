@@ -23,8 +23,6 @@ import lombok.Setter;
 @Table(name = "missions")
 public class Mission {
 	
-	public Mission() {
-	}
 
     @Id 
     @GeneratedValue(strategy = GenerationType.IDENTITY) // Génération automatique de l'ID
