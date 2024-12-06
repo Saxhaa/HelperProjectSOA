@@ -5,17 +5,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="a8fb0447-6ce7-463b-86e7-bdabdf7138d5" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/config/authentification-service.properties" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/config/orchestrator-service.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/authentication-service/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/authentication-service/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/authentication-service/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/authentication-service/src/main/resources/application.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/config/client-service-dev.properties" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/config/client-service.properties" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/mission-service/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/mission-service/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/orchestrator-service/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/orchestrator-service/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/orchestrator-service/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/orchestrator-service/src/main/resources/application.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/orchestrator-service/src/main/java/fr/insa/soa/orchestratorService/controller/OrchestratorController.java" beforeDir="false" afterPath="$PROJECT_DIR$/orchestrator-service/src/main/java/fr/insa/soa/orchestratorService/controller/OrchestratorController.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />

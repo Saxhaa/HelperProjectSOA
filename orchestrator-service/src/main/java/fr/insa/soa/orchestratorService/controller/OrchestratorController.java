@@ -14,9 +14,9 @@ import java.util.Map;
 @RequestMapping("/orchestrator")
 public class OrchestratorController {
 
-    private static final String MISSION_SERVICE_URL = "http://MissionMicroservice/missions";
-    private static final String USER_SERVICE_URL = "http://UserMicroservice/user";
-    private static final String AUTH_SERVICE_URL = "http://AuthenticationMicroservice/auth";
+    private static final String MISSION_SERVICE_URL = "http://MISSION-SERVICE/missions";
+    private static final String USER_SERVICE_URL = "http://USER-SERVICE/user";
+    private static final String AUTH_SERVICE_URL = "http://AUTHENTICATION-SERVICE/auth";
 
     @Autowired
     private RestTemplate restTemplate;
@@ -28,7 +28,7 @@ public class OrchestratorController {
     }
 
     // Récupérer une mission par ID
-    @GetMapping("/mission/{id}")
+    @GetMapping("/missions/{id}")
     public ResponseEntity<?> getMissionById(@PathVariable int id) {
         try {
             String url = MISSION_SERVICE_URL + "/" + id;
@@ -75,7 +75,7 @@ public class OrchestratorController {
     }
 
     // Récupérer tous les utilisateurs
-    @GetMapping("/users")
+    @GetMapping("/user/all")
     public ResponseEntity<?> getAllUsers() {
         try {
             String url = USER_SERVICE_URL + "/all";
