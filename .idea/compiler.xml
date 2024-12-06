@@ -8,6 +8,7 @@
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
         <module name="user-service" />
+        <module name="configuration-service" />
         <module name="mission-service" />
         <module name="discovery-service" />
         <module name="UserMicroservice" />
@@ -25,15 +26,15 @@
     </annotationProcessing>
     <bytecodeTargetLevel>
       <module name="Helper" target="11" />
-      <module name="HelperProject" target="1.8" />
     </bytecodeTargetLevel>
   </component>
   <component name="JavacSettings">
     <option name="ADDITIONAL_OPTIONS_OVERRIDE">
       <module name="Helper-project" options="-parameters" />
-      <module name="HelperProject" options="" />
+      <module name="HelperProject" options="-parameters" />
       <module name="UserMicroservice" options="" />
       <module name="common" options="-parameters" />
+      <module name="configuration-service" options="-parameters" />
       <module name="discovery-service" options="-parameters" />
       <module name="mission-service" options="-parameters" />
       <module name="user-service" options="-parameters" />
