@@ -10,7 +10,7 @@
 
 	<artifactId>mission-service</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
-	<name>MissionService</name>
+	<name>mission-service</name>
 	<description>Microservice to handle mission creation and management</description>
 
 	<properties>
