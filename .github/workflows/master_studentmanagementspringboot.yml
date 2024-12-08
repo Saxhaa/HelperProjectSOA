@@ -1,28 +1,14 @@
-# Docs for the Azure Web Apps Deploy action: https://github.com/Azure/webapps-deploy
-# More GitHub Actions for Azure: https://github.com/Azure/actions
-
-name: Build and deploy multiple JAR apps to Azure Web Apps
+name: Build and deploy JAR app to Azure Web App - studentManagementSpringBoot
 
 on:
   push:
     branches:
-      - master
       - integratingServices
   workflow_dispatch:
 
 jobs:
   build:
     runs-on: ubuntu-latest
-
-    strategy:
-      matrix:
-        service:
-          - discovery-service
-          - configuration-service
-          - orchestrator-service
-          - user-service
-          - mission-service
-          - authentication-service
 
     steps:
       - uses: actions/checkout@v4
@@ -34,51 +20,42 @@ jobs:
           distribution: 'microsoft'
 
       - name: Build with Maven
-        run: |
-          cd ${{ matrix.service }}
-          mvn clean install
+        run: mvn clean install -f orchestrator-service/pom.xml
 
       - name: Upload artifact for deployment job
         uses: actions/upload-artifact@v4
         with:
-          name: ${{ matrix.service }}
-          path: '${{ github.workspace }}/${{ matrix.service }}/target/*.jar'
+          name: java-app
+          path: '${{ github.workspace }}/orchestrator-service/target/*.jar'
 
   deploy:
     runs-on: ubuntu-latest
     needs: build
-
-    strategy:
-      matrix:
-        service:
-          - discovery-service
-          - configuration-service
-          - orchestrator-service
-          - user-service
-          - mission-service
-          - authentication-service
-
     environment:
-      name: 'Production-${{ matrix.service }}'
+      name: 'Production'
       url: ${{ steps.deploy-to-webapp.outputs.webapp-url }}
     permissions:
-      id-token: write # This is required for requesting the JWT
-
+      id-token: write #This is required for requesting the JWT
+  
     steps:
       - name: Download artifact from build job
         uses: actions/download-artifact@v4
         with:
-          name: ${{ matrix.service }}
-
-      - name: Login to Azure (Interactive)
-        run: az login
-
+          name: java-app
+      
+      - name: Login to Azure
+        uses: azure/login@v2
+        with:
+          client-id: ${{ secrets.AZUREAPPSERVICE_CLIENTID_15B6BF247E9045B4B5708C7C1636B1E7 }}
+          tenant-id: ${{ secrets.AZUREAPPSERVICE_TENANTID_C03C0BA721D54960AC2527C32F2E52B9 }}
+          subscription-id: ${{ secrets.AZUREAPPSERVICE_SUBSCRIPTIONID_CCEBAEBE0C8D4B92AB1E4EB3AE964409 }}
 
       - name: Deploy to Azure Web App
         id: deploy-to-webapp
         uses: azure/webapps-deploy@v3
         with:
-          app-name: '${{ matrix.service }}-app'
+          app-name: 'orchestrator-service'
           slot-name: 'Production'
           package: '*.jar'
+          
           
