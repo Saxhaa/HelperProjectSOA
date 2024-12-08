@@ -6,7 +6,9 @@
   <component name="ChangeListManager">
     <list default="true" id="a8fb0447-6ce7-463b-86e7-bdabdf7138d5" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/authentication-service/src/main/java/fr/insa/soa/authenticationService/service/AuthenticationService.java" beforeDir="false" afterPath="$PROJECT_DIR$/authentication-service/src/main/java/fr/insa/soa/authenticationService/service/AuthenticationService.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/orchestrator-service/src/main/java/fr/insa/soa/orchestratorService/controller/OrchestratorController.java" beforeDir="false" afterPath="$PROJECT_DIR$/orchestrator-service/src/main/java/fr/insa/soa/orchestratorService/controller/OrchestratorController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/user-service/src/main/java/fr/insa/soa/userservice/controller/UserController.java" beforeDir="false" afterPath="$PROJECT_DIR$/user-service/src/main/java/fr/insa/soa/userservice/controller/UserController.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />

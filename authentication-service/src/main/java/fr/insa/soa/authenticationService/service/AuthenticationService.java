@@ -2,6 +2,7 @@ package fr.insa.soa.authenticationService.service;
 
 
 
+import lombok.Getter;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -15,7 +16,9 @@ public class AuthenticationService {
     @Autowired
     private UserRepository userRepository;
 
+    // Récupérer l'utilisateur connecté
     // Variable pour stocker l'utilisateur connecté en mémoire
+    @Getter
     private User connectedUser;
 
     // Vérification des informations d'identification de l'utilisateur
@@ -27,11 +30,6 @@ public class AuthenticationService {
             return true;
         }
         return false;
-    }
-
-    // Récupérer l'utilisateur connecté
-    public User getConnectedUser() {
-        return connectedUser;
     }
 
     // Déconnexion (réinitialise l'utilisateur connecté)

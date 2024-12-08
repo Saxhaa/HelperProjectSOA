@@ -116,26 +116,26 @@ public class UserController {
     }
 
   
-    @PutMapping("/password")
-    public ResponseEntity<Object> changePassword(@RequestParam int userId, @RequestParam String newPassword) {
-        logger.debug("Request to change password for user ID: " + userId);
+    @PutMapping("/{id}/{password}")
+    public ResponseEntity<Object> changePassword(@PathVariable int id, @PathVariable String password) {
+        logger.debug("Request to change password for user ID: " + id);
 
-        if (newPassword == null || newPassword.isEmpty()) {
+        if (password == null || password.isEmpty()) {
             logger.warn("Password change request missing new password");
             return ResponseEntity.status(HttpStatus.SC_BAD_REQUEST)
                     .body("New password cannot be empty");
         }
 
-        Optional<User> user = userService.getUserById(userId);
+        Optional<User> user = userService.getUserById(id);
         if (!(user.isPresent())) {
-            logger.warn("User with ID " + userId + " not found for password change");
+            logger.warn("User with ID " + id + " not found for password change");
             return ResponseEntity.status(HttpStatus.SC_NOT_FOUND)
-                    .body("User with ID " + userId + " not found");
+                    .body("User with ID " + id + " not found");
         }
 
-        user.get().setPassword(newPassword);
+        user.get().setPassword(password);
         userService.saveUser(user.get());
-        logger.debug("Password updated successfully for user ID: " + userId);
+        logger.debug("Password updated successfully for user ID: " + id);
 
         return ResponseEntity.ok(user.get());
     }

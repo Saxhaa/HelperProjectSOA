@@ -3,9 +3,11 @@ package fr.insa.soa.orchestratorService.controller;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
+import org.springframework.web.client.HttpClientErrorException;
 import org.springframework.web.client.RestTemplate;
 import fr.insa.soa.orchestratorService.model.Mission;
 import fr.insa.soa.orchestratorService.model.User;
+import org.springframework.web.util.UriComponentsBuilder;
 
 import java.util.List;
 import java.util.Map;
@@ -25,6 +27,36 @@ public class OrchestratorController {
     @GetMapping("/test")
     public String test() {
         return "Orchestrator is up and running!";
+    }
+
+    // Créer une mission
+    @PostMapping("/mission/create")
+    public ResponseEntity<?> createMission(@RequestParam String name, @RequestParam String description) {
+        try {
+            // Créer une nouvelle mission avec les données des paramètres
+            Mission newMission = new Mission();
+            newMission.setName(name);
+            newMission.setDescription(description);
+
+            // Récupérer l'utilisateur connecté
+            User connectedUser = getConnectedUser(); // Utilisation de la méthode pour récupérer l'utilisateur connecté
+
+            // Mettre à jour l'ID de la personne dans le besoin avec l'utilisateur connecté
+            newMission.setPersonInNeedId(connectedUser.getId());
+            newMission.setHelperId(0);  // Aucun volontaire par défaut
+            newMission.setStatus(0);    // Statut initial : en attente
+
+            // Envoi de la requête au microservice Mission
+            String missionUrl = MISSION_SERVICE_URL + "/create";
+            Mission createdMission = restTemplate.postForObject(missionUrl, newMission, Mission.class);
+
+            // Retourner la réponse
+            return ResponseEntity.ok(createdMission);
+        } catch (HttpClientErrorException.BadRequest e) {
+            return ResponseEntity.status(400).body("Invalid request: " + e.getMessage());
+        } catch (Exception e) {
+            return ResponseEntity.status(500).body("Erreur lors de la création de la mission : " + e.getMessage());
+        }
     }
 
     // Récupérer une mission par ID
@@ -62,73 +94,9 @@ public class OrchestratorController {
         }
     }
 
-    // Récupérer un utilisateur par ID
-    @GetMapping("/user/{id}")
-    public ResponseEntity<?> getUserById(@PathVariable int id) {
-        try {
-            String url = USER_SERVICE_URL + "/" + id;
-            User user = restTemplate.getForObject(url, User.class);
-            return ResponseEntity.ok(user);
-        } catch (Exception e) {
-            return ResponseEntity.status(500).body("Erreur lors de la récupération de l'utilisateur : " + e.getMessage());
-        }
-    }
-
-    // Récupérer tous les utilisateurs
-    @GetMapping("/user/all")
-    public ResponseEntity<?> getAllUsers() {
-        try {
-            String url = USER_SERVICE_URL + "/all";
-            List<User> users = restTemplate.getForObject(url, List.class);
-            return ResponseEntity.ok(users);
-        } catch (Exception e) {
-            return ResponseEntity.status(500).body("Erreur lors de la récupération des utilisateurs : " + e.getMessage());
-        }
-    }
-
-    // Récupérer l'utilisateur "connecté"
-    @GetMapping("/user/connected")
-    public User getConnectedUser() {
-        try {
-            String url = AUTH_SERVICE_URL + "/connected";  // Assurez-vous que cet endpoint existe dans le microservice Auth
-            return restTemplate.getForObject(url, User.class);
-        } catch (Exception e) {
-            throw new RuntimeException("Erreur lors de la récupération de l'utilisateur connecté : " + e.getMessage());
-        }
-    }
-
- // Créer une mission
-    @PostMapping("/mission/create")
-    public ResponseEntity<?> createMission(@RequestParam String name, @RequestParam String description) {
-        try {
-            // Créer une nouvelle mission avec les données des paramètres
-            Mission newMission = new Mission();
-            newMission.setName(name);
-            newMission.setDescription(description);
-
-            // Récupérer l'utilisateur connecté
-            User connectedUser = getConnectedUser(); // Utilisation de la méthode pour récupérer l'utilisateur connecté
-
-            // Mettre à jour l'ID de la personne dans le besoin avec l'utilisateur connecté
-            newMission.setPersonInNeedId(connectedUser.getId());
-            newMission.setHelperId(0);  // Aucun volontaire par défaut
-            newMission.setStatus(0);    // Statut initial : en attente
-
-            // Envoi de la requête au microservice Mission
-            String missionUrl = MISSION_SERVICE_URL + "/create";
-            Mission createdMission = restTemplate.postForObject(missionUrl, newMission, Mission.class);
-
-            // Retourner la réponse
-            return ResponseEntity.ok(createdMission);
-        } catch (Exception e) {
-            return ResponseEntity.status(500).body("Erreur lors de la création de la mission : " + e.getMessage());
-        }
-    }
-
-
- // Modifier une mission
-    @PutMapping("/mission/{id}/modify")
-    public ResponseEntity<?> modifyMission(@PathVariable int id, @RequestBody Mission updatedMission) {
+    // Modifier une mission
+    @PutMapping("/mission/{id}/status")
+    public ResponseEntity<?> modifyMission(@PathVariable int id, @RequestParam boolean isAccepted, @RequestBody Mission updatedMission) {
         try {
             // Récupérer l'utilisateur connecté
             User connectedUser = getConnectedUser();
@@ -155,12 +123,38 @@ public class OrchestratorController {
             String missionUrl = MISSION_SERVICE_URL + "/" + id;
             restTemplate.delete(missionUrl);
             return ResponseEntity.ok("Mission supprimée avec succès !");
+        } catch (HttpClientErrorException.NotFound e) {
+            return ResponseEntity.status(404).body("Mission not found: " + e.getMessage());
         } catch (Exception e) {
             return ResponseEntity.status(500).body("Erreur lors de la suppression de la mission : " + e.getMessage());
         }
     }
 
- // Créer un nouvel utilisateur
+    // Récupérer un utilisateur par ID
+    @GetMapping("/user/{id}")
+    public ResponseEntity<?> getUserById(@PathVariable int id) {
+        try {
+            String url = USER_SERVICE_URL + "/" + id;
+            User user = restTemplate.getForObject(url, User.class);
+            return ResponseEntity.ok(user);
+        } catch (Exception e) {
+            return ResponseEntity.status(500).body("Erreur lors de la récupération de l'utilisateur : " + e.getMessage());
+        }
+    }
+
+    // Récupérer tous les utilisateurs
+    @GetMapping("/user/all")
+    public ResponseEntity<?> getAllUsers() {
+        try {
+            String url = USER_SERVICE_URL + "/all";
+            List<User> users = restTemplate.getForObject(url, List.class);
+            return ResponseEntity.ok(users);
+        } catch (Exception e) {
+            return ResponseEntity.status(500).body("Erreur lors de la récupération des utilisateurs : " + e.getMessage());
+        }
+    }
+
+    // Créer un nouvel utilisateur
     @PostMapping("/user/create")
     public ResponseEntity<?> createUser(@RequestBody User newUser) {
         try {
@@ -174,14 +168,14 @@ public class OrchestratorController {
         }
     }
 
- // Mettre à jour un utilisateur
-    @PutMapping("/user/{id}/update")
-    public ResponseEntity<?> updateUser(@PathVariable int id, @RequestBody User updatedUser) {
+    // Mettre à jour un utilisateur
+    @PutMapping("/user/{id}/{password}")
+    public ResponseEntity<?> updateUser(@PathVariable int id, @PathVariable String password, @RequestBody User updatedUser) {
         try {
-            updatedUser.setId(id);
+            updatedUser.setPassword(password);
 
             // Envoi de la requête pour mettre à jour l'utilisateur dans le microservice User
-            String userUrl = USER_SERVICE_URL + "/" + id + "/update";
+            String userUrl = USER_SERVICE_URL + "/" + id + "/" + password;
             restTemplate.put(userUrl, updatedUser);
 
             return ResponseEntity.ok("Utilisateur mis à jour avec succès !");
@@ -202,13 +196,28 @@ public class OrchestratorController {
             return ResponseEntity.status(500).body("Erreur lors de la suppression de l'utilisateur : " + e.getMessage());
         }
     }
+
+    // Récupérer l'utilisateur "connecté"
+    @GetMapping("/connected")
+    public User getConnectedUser() {
+        try {
+            String url = AUTH_SERVICE_URL + "/connected";
+            return restTemplate.getForObject(url, User.class);
+        } catch (Exception e) {
+            throw new RuntimeException("Erreur lors de la récupération de l'utilisateur connecté : " + e.getMessage());
+        }
+    }
     
  // Connexion de l'utilisateur
     @PostMapping("/login")
     public ResponseEntity<String> login(@RequestParam String userName, @RequestParam String password) {
         try {
             // Appel au service Authentication pour connecter l'utilisateur
-            String loginUrl = "http://AuthenticationMicroservice/auth/login?userName=" + userName + "&password=" + password;
+            String loginUrl = UriComponentsBuilder.fromHttpUrl(AUTH_SERVICE_URL + "/login")
+                    .queryParam("userName", userName)
+                    .queryParam("password", password)
+                    .toUriString();
+
             String response = restTemplate.postForObject(loginUrl, null, String.class);
 
             if ("Utilisateur connecté !".equals(response)) {
@@ -226,7 +235,7 @@ public class OrchestratorController {
     public ResponseEntity<String> logout() {
         try {
             // Appel au service Authentication pour déconnecter l'utilisateur
-            String logoutUrl = "http://AuthenticationMicroservice/auth/logout";
+            String logoutUrl = AUTH_SERVICE_URL + "/logout";
             restTemplate.postForObject(logoutUrl, null, String.class);
             return ResponseEntity.ok("Utilisateur déconnecté !");
         } catch (Exception e) {
