@@ -1,6 +1,8 @@
 package fr.insa.soa.orchestratorService.controller;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpMethod;
+import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.client.HttpClientErrorException;
@@ -9,6 +11,7 @@ import fr.insa.soa.orchestratorService.model.Mission;
 import fr.insa.soa.orchestratorService.model.User;
 import org.springframework.web.util.UriComponentsBuilder;
 
+import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
@@ -94,30 +97,38 @@ public class OrchestratorController {
         }
     }
 
-    // Modifier une mission
-    @PutMapping("/mission/{id}/status")
-    public ResponseEntity<?> modifyMission(@PathVariable int id, @RequestParam boolean isAccepted, @RequestBody Mission updatedMission) {
+    @PutMapping("/missions/{id}/status")
+    public ResponseEntity<?> modifyMission(@PathVariable int id, @RequestParam boolean validationStatus) {
         try {
             // Récupérer l'utilisateur connecté
             User connectedUser = getConnectedUser();
+            if (connectedUser == null) {
+                return ResponseEntity.status(401).body("Utilisateur non connecté");
+            }
 
-            // Préparer la requête pour modifier une mission
-            updatedMission.setMissionId(id);
-            updatedMission.setPersonInNeedId(connectedUser.getId());
+            // Build the URL to the acceptOrRefuseMission endpoint
+            String url = MISSION_SERVICE_URL + "/{id}/status?validationStatus={validationStatus}";
 
-            // Envoi de la requête pour modifier la mission dans le microservice Mission
-            String missionUrl = MISSION_SERVICE_URL + "/" + id + "/update";
-            restTemplate.put(missionUrl, updatedMission);
+            // Create request parameters
+            Map<String, String> params = new HashMap<>();
+            params.put("id", String.valueOf(id));
+            params.put("validationStatus", String.valueOf(validationStatus));
 
-            return ResponseEntity.ok("Mission modifiée avec succès !");
+            // Send PUT request using RestTemplate
+            ResponseEntity<?> response = restTemplate.exchange(url, HttpMethod.PUT, null, Object.class, params);
+
+            // Return the response from the microservice (Mission service)
+            return response;
+
         } catch (Exception e) {
             return ResponseEntity.status(500).body("Erreur lors de la modification de la mission : " + e.getMessage());
         }
     }
 
 
+
     // Supprimer une mission
-    @DeleteMapping("/mission/{id}/delete")
+    @DeleteMapping("/missions/{id}/delete")
     public ResponseEntity<?> deleteMission(@PathVariable int id) {
         try {
             String missionUrl = MISSION_SERVICE_URL + "/" + id;
@@ -170,19 +181,31 @@ public class OrchestratorController {
 
     // Mettre à jour un utilisateur
     @PutMapping("/user/{id}/{password}")
-    public ResponseEntity<?> updateUser(@PathVariable int id, @PathVariable String password, @RequestBody User updatedUser) {
+    public ResponseEntity<?> updateUser(@PathVariable int id, @PathVariable String password) {
         try {
-            updatedUser.setPassword(password);
+            // Construct the URL to call the changePassword endpoint using RestTemplate
+            String url = UriComponentsBuilder
+                    .fromHttpUrl(USER_SERVICE_URL + "/{id}/{password}")  // The URL for changing the password
+                    .buildAndExpand(id, password)  // Inject 'id' and 'password' into the URL
+                    .toUriString();
 
-            // Envoi de la requête pour mettre à jour l'utilisateur dans le microservice User
-            String userUrl = USER_SERVICE_URL + "/" + id + "/" + password;
-            restTemplate.put(userUrl, updatedUser);
+            // Send PUT request using RestTemplate to change the password
+            ResponseEntity<Object> response = restTemplate.exchange(
+                    url, HttpMethod.PUT, null, Object.class
+            );
 
-            return ResponseEntity.ok("Utilisateur mis à jour avec succès !");
+            // Check if the password change was successful
+            if (response.getStatusCode() == HttpStatus.OK) {
+                return ResponseEntity.ok("User updated successfully, password changed.");
+            } else {
+                return ResponseEntity.status(response.getStatusCode()).body(response.getBody());
+            }
+
         } catch (Exception e) {
-            return ResponseEntity.status(500).body("Erreur lors de la mise à jour de l'utilisateur : " + e.getMessage());
+            return ResponseEntity.status(500).body("Error updating the user: " + e.getMessage());
         }
     }
+
 
 
     // Supprimer un utilisateur
