@@ -70,12 +70,9 @@ jobs:
         with:
           name: ${{ matrix.service }}
 
-      - name: Login to Azure
-        uses: azure/login@v2
-        with:
-          client-id: ${{ secrets.AZUREAPPSERVICE_CLIENTID_15B6BF247E9045B4B5708C7C1636B1E7 }}
-          tenant-id: ${{ secrets.AZUREAPPSERVICE_TENANTID_C03C0BA721D54960AC2527C32F2E52B9 }}
-          subscription-id: ${{ secrets.AZUREAPPSERVICE_SUBSCRIPTIONID_CCEBAEBE0C8D4B92AB1E4EB3AE964409 }}
+      - name: Login to Azure (Interactive)
+        run: az login
+
 
       - name: Deploy to Azure Web App
         id: deploy-to-webapp
