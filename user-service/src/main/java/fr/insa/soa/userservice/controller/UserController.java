@@ -66,6 +66,20 @@ public class UserController {
         logger.debug("Found User : " + user.get());
         return ResponseEntity.ok(user.get());
     }
+    
+    @GetMapping("/connect")
+    public ResponseEntity<User> getConnectedUser() {
+        try {
+            // Simule un utilisateur connecté (exemple d'un utilisateur avec ID = 1)
+            User user = new User(1, "personInNeed","connectedUser", "password123");
+
+            // Retourner une ResponseEntity avec un statut HTTP 200 (OK)
+            return ResponseEntity.ok(user);
+        } catch (Exception e) {
+            // Retourner une ResponseEntity avec un statut HTTP 500 en cas d'erreur
+            return ResponseEntity.status(500).body(null);
+        }
+    }
 
     // Get all Users
     @GetMapping("/all")
@@ -101,31 +115,27 @@ public class UserController {
         return ResponseEntity.noContent().build();
     }
 
-    @GetMapping("/connect")
-    public void connectToProfile(){
+  
+    @PutMapping("/{id}/{password}")
+    public ResponseEntity<Object> changePassword(@PathVariable int id, @PathVariable String password) {
+        logger.debug("Request to change password for user ID: " + id);
 
-    }
-
-    @PutMapping("/password")
-    public ResponseEntity<Object> changePassword(@RequestParam int userId, @RequestParam String newPassword) {
-        logger.debug("Request to change password for user ID: " + userId);
-
-        if (newPassword == null || newPassword.isEmpty()) {
+        if (password == null || password.isEmpty()) {
             logger.warn("Password change request missing new password");
             return ResponseEntity.status(HttpStatus.SC_BAD_REQUEST)
                     .body("New password cannot be empty");
         }
 
-        Optional<User> user = userService.getUserById(userId);
+        Optional<User> user = userService.getUserById(id);
         if (!(user.isPresent())) {
-            logger.warn("User with ID " + userId + " not found for password change");
+            logger.warn("User with ID " + id + " not found for password change");
             return ResponseEntity.status(HttpStatus.SC_NOT_FOUND)
-                    .body("User with ID " + userId + " not found");
+                    .body("User with ID " + id + " not found");
         }
 
-        user.get().setPassword(newPassword);
+        user.get().setPassword(password);
         userService.saveUser(user.get());
-        logger.debug("Password updated successfully for user ID: " + userId);
+        logger.debug("Password updated successfully for user ID: " + id);
 
         return ResponseEntity.ok(user.get());
     }

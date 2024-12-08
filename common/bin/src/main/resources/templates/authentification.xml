@@ -1,0 +1,105 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<definitions xmlns="http://schemas.xmlsoap.org/wsdl/"
+             xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/"
+             xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+             xmlns:tns="http://www.exemple.com/AuthentificationService"
+             targetNamespace="http://www.exemple.com/AuthentificationService"
+             name="AuthentificationServiceSOAP">
+
+    <!-- Définition des types de données -->
+    <types>
+        <xsd:schema targetNamespace="http://www.exemple.com/AuthentificationService">
+            <xsd:element name="AuthentifyUserRequest">
+                <xsd:complexType>
+                    <xsd:sequence>
+                        <xsd:element name="userId" type="xsd:int"/>
+	                    <xsd:element name="role" type="xsd:int"/>
+                        <xsd:element name="username" type="xsd:string"/>
+                        <xsd:element name="password" type="xsd:string"/>
+                    </xsd:sequence>
+                </xsd:complexType>
+            </xsd:element>
+            <xsd:element name="AuthentifyUserResponse">
+                <xsd:complexType>
+                    <xsd:sequence>
+                        <xsd:element name="message" type="xsd:string"/>
+                    </xsd:sequence>
+                </xsd:complexType>
+            </xsd:element>
+            
+            <xsd:element name="AccessPermissionRequest">
+                <xsd:complexType>
+                    <xsd:sequence>
+                        <xsd:element name="userId" type="xsd:int"/>
+                        <xsd:element name="roleId" type="xsd:int"/>
+                        <xsd:element name="missionId" type="xsd:int"/>
+                        <xsd:element name="missionStatus" type="xsd:String"/>
+                    </xsd:sequence>
+                </xsd:complexType>
+            </xsd:element>
+            <xsd:element name="AccessPermissionResponse">
+                <xsd:complexType>
+                    <xsd:sequence>
+                        <xsd:element name="message" type="xsd:string"/>
+                    </xsd:sequence>
+                </xsd:complexType>
+            </xsd:element>
+        </xsd:schema>
+    </types>
+
+    <!-- Définition des messages -->
+    <message name="AuthentifyUserRequestMessage">
+        <part name="parameters" element="tns:AuthentifyUserRequest"/>
+    </message>
+    <message name="AuthentifyUserResponseMessage">
+        <part name="result" element="tns:AuthentifyUserResponse"/>
+    </message>
+    <message name="AccessPermissionRequestMessage">
+        <part name="parameters" element="tns:AccessPermissionRequest"/>
+    </message>
+    <message name="PermissionResponseMessage">
+        <part name="result" element="tns:AccessPermissionResponse"/>
+    </message>
+
+    <!-- Définition de l'opération -->
+    <portType name="AuthentificationServicePortType">
+        <operation name="AuthentifyUser">
+            <input message="tns:AuthentifyUserRequestMessage"/>
+            <output message="tns:AuthentifyUserResponseMessage"/>
+        </operation>
+        <operation name="AccessPermission">
+            <input message="tns:AccessPermissionRequestMessage"/>
+            <output message="tns:AccessPermissionResponseMessage"/>
+        </operation>
+    </portType>
+
+    <!-- Définition du binding SOAP -->
+    <binding name="AuthentificationServiceBinding" type="tns:AuthentificationServicePortType">
+        <soap:binding style="document" transport="http://schemas.xmlsoap.org/soap/http"/>
+        <operation name="AuthentifyUser">
+            <soap:operation soapAction="http://www.exemple.com/AuthentificationService/AuthentifyUser"/>
+            <input>
+                <soap:body use="literal"/>
+            </input>
+            <output>
+                <soap:body use="literal"/>
+            </output>
+        </operation>
+        <operation name="AccessPermission">
+            <soap:operation soapAction="http://www.exemple.com/AuthentificationService/AccessPermission"/>
+            <input>
+                <soap:body use="literal"/>
+            </input>
+            <output>
+                <soap:body use="literal"/>
+            </output>
+        </operation>
+    </binding>
+
+    <!-- Point d'accès du service -->
+    <service name="AuthentificationService">
+        <port name="AuthentificationServicePort" binding="tns:AuthentificationServiceBinding">
+            <soap:address location="http://www.exemple.com/AuthentificationService"/>
+        </port>
+    </service>
+</definitions>
